@@ -13,27 +13,6 @@
   let margin = 20; // margen en el canvas
   let centerX, centerY, maxRadius;
   let R1, R2, R3; // radios para cada capa
-
-  // Variables para la animación
-    let animationTriggered = false; // indica si ya presionamos "a" para iniciar
-    let animating = false;          // indica si la transición está en curso
-    let animationStartTime = 0;
-    let animationDuration = 2000; // duración de la animación en ms
-    let reset = false; // indica si se debe reiniciar la animación
-
-    // Variables para la fuente y puntos de la palabra "IDED"
-    let myFont;
-    let textPoints = [];
-
-    // App state
-    let appState = "initial"; // "initial", "animating", "final"
-
-    // Carga la fuente en preload
-    function preload() {
-    // Asegúrate de tener la fuente en la carpeta "assets"
-        myFont = loadFont('Orbitron-Bold.ttf'); 
-    }
-  
   
   function handleFile(file) {
     // Validamos el tipo de archivo (puede ser "application/json" o "text")
@@ -42,7 +21,6 @@
         // Si file.data ya es un objeto, lo asignamos directamente, sino lo parseamos
         curriculumData = (typeof file.data === "object") ? file.data : JSON.parse(file.data);
         createGraph(); // Reconstruimos el grafo con los nuevos datos
-        prepararAnimacion();
       } catch (e) {
         console.error("Error al parsear el JSON:", e);
       }
@@ -50,6 +28,8 @@
       console.error("Tipo de archivo no válido. Se requiere un archivo JSON.");
     }
   }
+
+
 
   function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -60,7 +40,6 @@
     fileInput.hide();
 
     createGraph();
-    prepararAnimacion();
   }
   
   function windowResized() {
@@ -78,30 +57,21 @@
       this.x = 0;
       this.y = 0;
       if (type === "capstone") {
-        this.r = 25;
+        this.r = 30;
       } else if (type === "category") {
-        this.r = 20;
+        this.r = 25;
       } else if (type === "subcat") {
-        this.r = 15;
+        this.r = 20;
       } else {
-        this.r = 10;
+        this.r = 15;
       }
       this.parent = null;
       this.children = [];
-
-        // Propiedades para animación:
-        this.currentR = 2;              // radio inicial (uniforme)
-        this.currentCol = color(255);    // color inicial (blanco)
-        this.startX = 0;
-        this.startY = 0;
-        this.finalX = 0;
-        this.finalY = 0;
-
     }
     
     display() {
-      fill(this.currentCol);
-      ellipse(this.x, this.y, this.currentR * 1);
+      fill(this.col);
+      ellipse(this.x, this.y, this.r * 1);
     }
     
     isMouseOver() {
@@ -177,12 +147,6 @@
         }
       }
     }
-      
-    // Guarda las posiciones definitivas
-    for (let n of nodes) {
-        n.finalX = n.x;
-        n.finalY = n.y;
-    }
   }
   
   // Dibuja las conexiones entre cada nodo y su padre
@@ -194,94 +158,21 @@
       }
     }
   }
-
-  // Genera los puntos de "IDED" y asigna posiciones iniciales
-function prepararAnimacion() {
-    let fontSize = 200;
-    let bbox = myFont.textBounds("IDED", 0, 0, fontSize);
-    let xText = width / 2 - bbox.w / 2;
-    let yText = height / 2 + bbox.h / 2;
-    
-    textPoints = myFont.textToPoints("IDED", xText, yText, fontSize, {
-      sampleFactor: 0.1
-    });
-    //console.log(textPoints.length);
-    //console.log(nodes.length);
-
-    for (let i = 0; i < nodes.length; i++) {
-      let pt = textPoints[ floor((textPoints.length/nodes.length)*i) ];
-      nodes[i].startX = pt.x;
-      nodes[i].startY = pt.y;
-      // Posición inicial = forma de "IDED"
-      nodes[i].x = nodes[i].startX;
-      nodes[i].y = nodes[i].startY;
-      // Estado inicial: radio 3, color blanco
-      nodes[i].currentR = 3;
-      nodes[i].currentCol = color(255);
-    }
-  }
   
   function draw() {
     background(0);
-    switch (appState) {
-        case "initial":
-
-            for(let i = 0; i< textPoints.length; i++){
-                circle(textPoints[i].x,textPoints[i].y,2);
-            }
-            for (let n of nodes) {
-                n.display();
-            }
-
-            if(animationTriggered===true){
-                appState = "animating";
-            }
-            
-            
+    drawEdges();
+    for (let n of nodes) {
+      n.display();
+    }
+    
+    // Muestra tooltip si el mouse está sobre un nodo
+    for (let n of nodes) {
+      if (n.isMouseOver()) {
+        showTooltip(n);
         break;
-        case "animating":
-            // Estamos en transición: interpolamos
-            let elapsed = millis() - animationStartTime;
-            let t = constrain(elapsed / animationDuration, 0, 1);
-            for (let n of nodes) {
-                n.x = lerp(n.startX, n.finalX, t);
-                n.y = lerp(n.startY, n.finalY, t);
-                n.currentR = lerp(2, n.r, t);
-                n.currentCol = lerpColor(color(255), n.col, t);
-            }
-            // Al finalizar la animación
-            if (t === 1) {
-                animating = false;
-                animationTriggered = false; 
-                appState = "final"; // Cambia el estado a "final"
-            }
-            drawEdges();
-            for (let n of nodes) {
-                n.display();
-            }
-
-        break;
-        case "final":
-            drawEdges();
-            for (let n of nodes) {
-                n.display();
-            }
-            // Muestra tooltip si el mouse está sobre un nodo
-            for (let n of nodes) {
-                if (n.isMouseOver()) {
-                showTooltip(n);
-                break;
-                }
-            }
-            
-            if(reset===true){
-                reset = false; // Reinicia el estado
-                prepararAnimacion();
-                appState = "initial";
-            }
-        break;
-
-        }
+      }
+    }
   }
   
   // Muestra un cuadro con la información del nodo (tooltip)
@@ -297,13 +188,11 @@ function prepararAnimacion() {
     let xPos = mouseX + 10;
     let yPos = mouseY + 10;
     
-    //fill(60, 20, 100);
-    fill('rgb(0, 140, 255)');
+    fill(60, 20, 100);
     stroke(0);
     rect(xPos, yPos, boxW, boxH);
     
     fill(0);
-    //fill(255);
     noStroke();
     textAlign(LEFT, TOP);
     text(infoText, xPos + padding, yPos + padding);
@@ -380,19 +269,11 @@ function prepararAnimacion() {
   }
   
   function keyPressed() {
-    if (key === "a" || key === "A") {
-        if (!animationTriggered) {
-          animationTriggered = true;
-          animating = true;
-          animationStartTime = millis();
-        }
-    } else if (key === "s" || key === "S") {
+    if (key === "s" || key === "S") {
       saveCanvas("curriculum_map", "png");
     } else if (key === "l" || key === "L") {
         // Simula un click en el input de archivo para cargar el JSON
         fileInput.elt.click();
-    } else if (key === "r" || key === "R") {
-        reset = true; // Cambia el estado a "reset"
     }
   }
   
