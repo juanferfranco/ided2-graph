@@ -80,8 +80,7 @@
         {
           "name": "Modelado y Texturizado 3D",
           "courses": [
-            { "name": "Modelado de personajes 3D", "info": "Sem 5, Animacion" },
-            { "name": "Prototipado 3D", "info": "Sem 5, Experiencias" },
+            { "name": "Modelado de personajes 3D", "info": "Sem 5, Animacion" },            
             { "name": "Texturización", "info": "Sem 7, Animacion" }
           ]
         },
@@ -111,6 +110,7 @@
         {
           "name": "Construcción Física y Mecatrónica",
           "courses": [
+            { "name": "Prototipado 3D", "info": "Sem 5, Experiencias" },
             { "name": "Mecanismos", "info": "Sem 6, Experiencias" }
           ]
         },

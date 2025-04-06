@@ -66,6 +66,12 @@
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     createGraph(); // reubica los nodos en función del nuevo tamaño
+    for (let n of nodes) {
+        n.x = n.finalX;
+        n.y = n.finalY;
+        n.currentR = n.r;
+        n.currentCol = n.col;
+    }
   }
   
   // Clase que representa cada nodo en el grafo
