@@ -1,0 +1,213 @@
+[
+    {
+      "name": "Fundamentos de Ingeniería y Computación",
+      "subcategories": [
+        {
+          "name": "Programación y Estructuras de Datos",
+          "courses": [
+            { "name": "Fundamentos de programación", "info": "Sem 2" },
+            { "name": "Programación y diseño orientado a objetos", "info": "Sem 3" },
+            { "name": "Scripting", "info": "Sem 5" }
+          ]
+        },
+        {
+          "name": "Sistemas Computacionales y Arquitectura",
+          "courses": [
+            { "name": "Sistemas computacionales", "info": "Sem 4" },
+            { "name": "Modelamiento matemático", "info": "Sem 4" },
+            { "name": "Sistemas interactivos distribuidos", "info": "Sem 7" }
+          ]
+        },
+        {
+          "name": "Matemáticas y Física para la Interacción",
+          "courses": [
+            { "name": "Cálculo diferencial", "info": "Sem 1" },
+            { "name": "Geometría analítica", "info": "Sem 1" },
+            { "name": "Cálculo integral", "info": "Sem 2" },
+            { "name": "Física mecánica", "info": "Sem 2" },
+            { "name": "Álgebra lineal", "info": "Sem 3" },
+            { "name": "Métodos experimentales en física", "info": "Sem 3" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tecnologías y Sistemas Avanzados para la Interacción",
+      "subcategories": [
+        {
+          "name": "Computación Gráfica y Rendering",
+          "courses": [
+            { "name": "Computación gráfica", "info": "Sem 6, Videojuegos - Sem 7, Animacion" }
+          ]
+        },
+        {
+          "name": "Diseño y Arte Generativo / Simulación",
+          "courses": [
+            { "name": "Sistemas físicos interactivos 1", "info": "Sem 4" },
+            { "name": "Sistemas físicos interactivos 2", "info": "Sem 5, Experiencias" },
+            { "name": "Simulación para sistemas interactivos", "info": "Sem 6" }
+          ]
+        },
+        {
+          "name": "Realidad Virtual, Aumentada e Inteligencia Artificial",
+          "courses": [
+            { "name": "Optativa CBD", "info": "Sem 4, Fundamentos de IA" },
+            { "name": "Procesos estocásticos", "info": "Sem 5" },
+            { "name": "Visión artificial", "info": "Sem 6, Experiencias" },
+            { "name": "Realidad virtual y aumentada", "info": "Sem 7, Videojuegos/Experiencias" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Creación y Producción de Contenidos Audiovisuales y Tangibles",
+      "subcategories": [
+        {
+          "name": "Fundamentos de Arte y Diseño Visual",
+          "courses": [
+            { "name": "Dibujo creativo", "info": "Sem 1" },
+            { "name": "Fundamentos de arte digital", "info": "Sem 2" }
+          ]
+        },
+        {
+          "name": "Modelado, Texturizado 3D y Rigging",
+          "courses": [
+            { "name": "Diseño de personajes", "info": "Sem 5, Animacion" },
+            { "name": "Modelado de personajes 3D", "info": "Sem 5, Animacion" },
+            { "name": "Rigging", "info": "Sem 5, Animacion" },
+            { "name": "Texturización", "info": "Sem 7, Animacion" }
+          ]
+        },
+        {
+          "name": "Animación (2D/3D, Motion Capture)",
+          "courses": [
+            { "name": "Introducción a la animación", "info": "Sem 3" },
+            { "name": "Animación digital", "info": "Sem 4" },
+            { "name": "Animación digital 2", "info": "Sem 6, Animacion" },
+            { "name": "Motion capture aplicado", "info": "Sem 6, Animacion" },
+            { "name": "Animación para videojuegos", "info": "Sem 7, Videojuegos" }
+          ]
+        },
+        {
+          "name": "Producción de Audio y Sonido",
+          "courses": [
+            { "name": "Producción de audio", "info": "Sem 3" },
+            { "name": "Diseño sonoro", "info": "Sem 4" }
+          ]
+        },
+        {
+          "name": "Construcción Física y Mecatrónica",
+          "courses": [
+            { "name": "Prototipado 3D", "info": "Sem 5, Experiencias" },
+            { "name": "Mecanismos", "info": "Sem 6, Experiencias" }
+          ]
+        },
+        {
+          "name": "Composición y Postproducción Visual",
+          "courses": [
+            { "name": "Composición digital y posproducción", "info": "Sem 7, Animacion" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Diseño de la Interacción, Experiencia de Usuario y Narrativa",
+      "subcategories": [
+        {
+          "name": "Fundamentos de Diseño y Creatividad",
+          "courses": [
+            { "name": "Introducción a Ingeniería en diseño de entretenimiento digital", "info": "Sem 1" },
+            { "name": "Taller 1: Procesos creativos", "info": "Sem 1" },
+            { "name": "Taller 2: Métodos de diseño", "info": "Sem 2" },
+            { "name": "Taller 3: Diseño en contexto", "info": "Sem 3" },
+            { "name": "Taller 4: Diseño de producto", "info": "Sem 4" },
+            { "name": "Diseño y cultura", "info": "Sem 6" },
+            { "name": "Visualización y diseño de información", "info": "Sem 7" }
+          ]
+        },
+        {
+          "name": "Diseño Narrativo e Hipertextual",
+          "courses": [
+            { "name": "Narrativa literaria e hipertextual", "info": "Sem 1" }
+          ]
+        },
+        {
+          "name": "Psicología Cognitiva y Principios de Interacción",
+          "courses": [
+            { "name": "Procesos cognitivos", "info": "Sem 3" }
+          ]
+        },
+        {
+          "name": "Diseño de Juegos (Game Design)",
+          "courses": [
+            { "name": "Introducción al game design", "info": "Sem 2" },
+            { "name": "Game Studies", "info": "Sem 5, Videojuegos" },
+            { "name": "Balance, economía y comunidades", "info": "Sem 5, Videojuegos" },
+            { "name": "Gamification", "info": "Sem 5, Experiencias" }
+          ]
+        },
+        {
+          "name": "Diseño de Interfaz y Experiencia de Usuario (UI/UX)",
+          "courses": [
+            { "name": "Diseño de interfaces y experiencias de usuario", "info": "Sem 5" },
+            { "name": "Diseño adaptable", "info": "Sem 6, Videojuegos" },
+            { "name": "Diseño de interfaces y experiencias de usuario 2", "info": "Sem 7, Experiencias" }
+          ]
+        },
+        {
+          "name": "Talleres Integradores de Diseño y Producto",
+          "courses": [
+            { "name": "Taller 5", "info": "Sem 5" },
+            { "name": "Taller 6", "info": "Sem 6" }
+          ]
+        },
+        {
+          "name": "Metodología de Investigación",
+          "courses": [
+            { "name": "Metodología de la investigación", "info": "Sem 4" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gestión de Proyectos y Responsabilidad Social",
+      "subcategories": [
+        {
+          "name": "Contexto Profesional, Emprendimiento y Tendencias",
+          "courses": [
+            { "name": "Emprendimiento y responsabilidad social", "info": "Sem 2" },
+            { "name": "Historia y tendencias del entretenimiento digital", "info": "Sem 5" },
+            { "name": "Ética profesional", "info": "Sem 6" }
+          ]
+        },
+        {
+          "name": "Gestión de Proyectos y Producción",
+          "courses": [
+            { "name": "Gestión y realización de proyectos de entretenimiento digital", "info": "Sem 6" }
+          ]
+        },
+        {
+          "name": "Cultura, Lenguaje y Ciudadanía",
+          "courses": [
+            { "name": "Humanismo y cultura ciudadana", "info": "Sem 1" },
+            { "name": "Lengua y cultura", "info": "Sem 1" }
+          ]
+        },
+        {
+          "name": "Ética y Pensamiento Crítico",
+          "courses": [
+            { "name": "Ética general", "info": "Sem 2" },
+            { "name": "Cristología", "info": "Sem 3" }
+          ]
+        },
+        {
+          "name": "Formación Humanística Complementaria",
+          "courses": [
+            { "name": "Línea de formación 1", "info": "Sem 6" },
+            { "name": "Línea de formación 2", "info": "Sem 7" }
+          ]
+        }
+      ]
+    }
+  ]
+  
