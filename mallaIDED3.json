@@ -1,0 +1,108 @@
+[
+    {
+      "semester": 1,
+      "courses": [
+        { "name": "Introducción a Ingeniería en diseño de entretenimiento digital" },
+        { "name": "Taller 1: Procesos creativos" },
+        { "name": "Fundamentos de programación" },
+        { "name": "Cálculo diferencial" },
+        { "name": "Dibujo creativo" },
+        { "name": "Humanismo y cultura ciudadana" },
+        { "name": "Lengua y cultura" }
+      ]
+    },
+    {
+      "semester": 2,
+      "courses": [
+        { "name": "Programación y diseño orientado a objetos" },
+        { "name": "Taller 2: Métodos de diseño" },
+        { "name": "Cálculo integral" },
+        { "name": "Geometría analítica" },
+        { "name": "Fundamentos de arte digital" },
+        { "name": "Introducción al game design" },
+        { "name": "Emprendimiento y responsabilidad social" }
+      ]
+    },
+    {
+      "semester": 3,
+      "courses": [
+        { "name": "Álgebra lineal" },
+        { "name": "Física mecánica" },
+        { "name": "Scripting" },
+        { "name": "Taller 3: Diseño en contexto" },
+        { "name": "Introducción a la animación" },
+        { "name": "Producción de audio" },
+        { "name": "Cristología" },
+        { "name": "Narrativa literaria e hipertextual" }
+      ]
+    },
+    {
+      "semester": 4,
+      "courses": [
+        { "name": "Sistemas computacionales" },
+        { "name": "Modelamiento matemático" },
+        { "name": "Métodos experimentales en física" },
+        { "name": "Taller 4: Diseño de producto" },
+        { "name": "Animación digital" },
+        { "name": "Diseño sonoro" },
+        { "name": "Ética general" }
+      ]
+    },
+    {
+      "semester": 5,
+      "courses": [
+        { "name": "Sistemas físicos interactivos 1" },
+        { "name": "Taller 5" },
+        { "name": "Game Studies" },
+        { "name": "Balance, economía y comunidades" },
+        { "name": "Diseño de interfaces y experiencias de usuario" },
+        { "name": "Prototipado 3D" },
+        { "name": "Modelado de personajes 3D" },
+        { "name": "Mecanismos" }
+      ]
+    },
+    {
+      "semester": 6,
+      "courses": [
+        { "name": "Sistemas físicos interactivos 2" },
+        { "name": "Taller 6" },
+        { "name": "Animación digital 2" },
+        { "name": "Motion capture aplicado" },
+        { "name": "Gamification" },
+        { "name": "Diseño de personajes" },
+        { "name": "Historia y tendencias del entretenimiento digital" }
+      ]
+    },
+    {
+      "semester": 7,
+      "courses": [
+        { "name": "Computación gráfica" },
+        { "name": "Simulación para sistemas interactivos" },
+        { "name": "Rigging" },
+        { "name": "Realidad virtual y aumentada" },
+        { "name": "Texturización" },
+        { "name": "Composición digital y posproducción" },
+        { "name": "Diseño y cultura" },
+        { "name": "Visualización y diseño de información" }
+      ]
+    },
+    {
+      "semester": 8,
+      "courses": [
+        { "name": "Visión artificial" },
+        { "name": "Sistemas interactivos distribuidos" },
+        { "name": "Gestión y realización de proyectos de entretenimiento digital" },
+        { "name": "Diseño adaptable" },
+        { "name": "Ética profesional" },
+        { "name": "Línea de formación 1" }
+      ]
+    },
+    {
+      "semester": 9,
+      "courses": [
+        { "name": "Diseño de interfaces y experiencias de usuario 2" },
+        { "name": "Línea de formación 2" }
+      ]
+    }
+  ]
+  
