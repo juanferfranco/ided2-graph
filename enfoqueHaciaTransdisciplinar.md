@@ -72,7 +72,7 @@
 
 
 # 🔁 De lo Interdisciplinario a lo Transdisciplinario  
-## ¿Qué implica y qué se requiere en educación moderna?
+## ¿Qué implica y qué se requiere?
 
 Pasar de lo **interdisciplinario** a lo **transdisciplinario** no es solo una evolución técnica, sino una transformación profunda del propósito educativo, la metodología y la relación con el mundo real.
 
