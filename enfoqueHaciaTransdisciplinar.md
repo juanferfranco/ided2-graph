@@ -139,5 +139,4 @@ Pasar de lo interdisciplinario a lo transdisciplinario requiere:
 
 ---
 
-¿Quieres que te ayude a diseñar una rúbrica, una guía docente o un módulo del curso para acompañar este tipo de transición? 🙂
 
