@@ -60,7 +60,7 @@
 
 ## ✨ En resumen
 
-| Enfoque            | ¿Es suficiente? | ¿Lo usarías en el programa? | ¿Por qué? |
+| Enfoque            | ¿Es suficiente? | ¿Lo usaríamos en el programa? | ¿Por qué? |
 |--------------------|------------------|-------------------------------|-----------|
 | **Disciplinario**   | ❌ No             | ✅ Como base inicial           | Para aprender los fundamentos |
 | **Multidisciplinario** | ⚠️ Parcial     | ✅ En algunas fases            | Útil para proyectos básicos |
