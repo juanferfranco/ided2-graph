@@ -1,4 +1,4 @@
-# Enfoques disciplinarios en la educación moderna  
+# Enfoques disciplinarios
 ## Aplicados a un programa de Ingeniería en Diseño de Entretenimiento Digital
 
 ---
