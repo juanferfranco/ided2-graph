@@ -52,7 +52,7 @@
    - Juegos, experiencias inmersivas, narrativas interactivas no solo se consumen: **modelan la cultura, la empatía y las relaciones**.  
    - Por eso, el programa debe promover una apertura hacia lo **transdisciplinario**, invitando a los estudiantes a conectar con problemas reales, con comunidades, con usuarios, con valores humanos.
 
-4. **La educación moderna promueve competencias para la vida, no solo para el trabajo**  
+4. **Una apuesta de educación que promueve las competencias para la vida, no solo para el trabajo**  
    - Resolver problemas complejos, colaborar, comunicar, pensar críticamente.  
    - Esto solo se logra cuando los saberes se integran y se usan en contextos auténticos (interdisciplinariedad y transdisciplinariedad).
 
