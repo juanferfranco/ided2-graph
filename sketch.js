@@ -399,6 +399,26 @@ function prepararAnimacion() {
         fileInput.elt.click();
     } else if (key === "r" || key === "R") {
         reset = true; // Cambia el estado a "reset"
-    }
+    } else if (key === "1" && appState === "initial") {
+        console.log("Intentando cargar curriculumDominios1.json...");
+        loadJSON('curriculumDominios1.json', 
+          (data) => { // Función de callback para éxito
+            if (data) {
+              curriculumData = data;
+              createGraph();      // Reconstruir el grafo con los nuevos datos
+              prepararAnimacion();  // Preparar las posiciones iniciales para la animación
+              console.log("curriculumDominios1.json cargado exitosamente y grafo reinicializado.");
+              animationTriggered = true;
+              animating = true;
+              animationStartTime = millis();
+            } else {
+              console.error("Error: curriculumDominios1.json está vacío o no es un JSON válido.");
+            }
+          }, 
+          (error) => { // Función de callback para error
+            console.error("Error al cargar curriculumDominios1.json:", error);
+          }
+        );
+      }
   }
   
