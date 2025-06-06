@@ -21,6 +21,11 @@
     let animationDuration = 2000; // duración de la animación en ms
     let reset = false; // indica si se debe reiniciar la animación
 
+  // Variables para feedback visual de carga
+  let loadingFeedback = false;
+  let loadingStartTime = 0;
+  let loadingDuration = 100; // duración del feedback en ms
+
     // Variables para la fuente y puntos de la palabra "IDED"
     let myFont;
     let textPoints = [];
@@ -74,7 +79,6 @@
     }
   }
   
-  // Clase que representa cada nodo en el grafo
   class Node {
     constructor(label, type, info = "", col = color(0)) {
       this.label = label;
@@ -245,6 +249,43 @@ function prepararAnimacion() {
             
             
         break;
+
+        case "loading":
+            // Estado de feedback visual después de cargar datos
+            let loadingElapsed = millis() - loadingStartTime;
+            let loadingProgress = constrain(loadingElapsed / loadingDuration, 0, 1);
+            
+            // Efecto de pulso en el brillo
+            let pulseSpeed = 6; // velocidad del pulso
+            let brightness = 50 + 50 * sin(loadingElapsed * pulseSpeed * 0.01);
+            
+            // Mostrar puntos de texto con tamaño aumentado
+            for(let i = 0; i < textPoints.length; i++){
+                fill(255, brightness);
+                circle(textPoints[i].x, textPoints[i].y, 6); // tamaño aumentado
+            }
+            
+            // Mostrar nodos con efecto de pulso
+            for (let n of nodes) {
+                // Radio aumentado con pulso
+                n.currentR = 8 + 3 * sin(loadingElapsed * pulseSpeed * 0.01);
+                // Color con brillo pulsante
+                n.currentCol = color(255, brightness);
+                n.display();
+            }
+            
+            // Finalizar el feedback y volver al estado inicial
+            if (loadingProgress >= 1) {
+                loadingFeedback = false;
+                appState = "initial";
+                // Resetear propiedades de los nodos
+                for (let n of nodes) {
+                    n.currentR = 3;
+                    n.currentCol = color(255);
+                }
+            }
+        break;
+
         case "animating":
             // Estamos en transición: interpolamos
             let elapsed = millis() - animationStartTime;
@@ -385,6 +426,32 @@ function prepararAnimacion() {
     dragGroup = null;
   }
   
+
+function loadCurriculumFile(fileName) {
+  console.log(`Intentando cargar ${fileName}...`);
+  loadJSON(fileName, 
+    (data) => { // Función de callback para éxito
+      if (data) {
+        curriculumData = data;
+        createGraph();      // Reconstruir el grafo con los nuevos datos
+        prepararAnimacion();  // Preparar las posiciones iniciales para la animación
+        console.log(`${fileName} cargado exitosamente y grafo reinicializado.`);
+        //animationTriggered = true;
+        //animating = true;
+        //animationStartTime = millis();
+        loadingFeedback = true;
+        loadingStartTime = millis();
+        appState = "loading";
+      } else {
+        console.error(`Error: ${fileName} está vacío o no es un JSON válido.`);
+      }
+    }, 
+    (error) => { // Función de callback para error
+      console.error(`Error al cargar ${fileName}:`, error);
+    }
+  );
+}
+
   function keyPressed() {
     if (key === "a" || key === "A") {
         if (!animationTriggered) {
@@ -399,26 +466,14 @@ function prepararAnimacion() {
         fileInput.elt.click();
     } else if (key === "r" || key === "R") {
         reset = true; // Cambia el estado a "reset"
-    } else if (key === "1" && appState === "initial") {
-        console.log("Intentando cargar curriculumDominios1.json...");
-        loadJSON('curriculumDominios1.json', 
-          (data) => { // Función de callback para éxito
-            if (data) {
-              curriculumData = data;
-              createGraph();      // Reconstruir el grafo con los nuevos datos
-              prepararAnimacion();  // Preparar las posiciones iniciales para la animación
-              console.log("curriculumDominios1.json cargado exitosamente y grafo reinicializado.");
-              animationTriggered = true;
-              animating = true;
-              animationStartTime = millis();
-            } else {
-              console.error("Error: curriculumDominios1.json está vacío o no es un JSON válido.");
-            }
-          }, 
-          (error) => { // Función de callback para error
-            console.error("Error al cargar curriculumDominios1.json:", error);
-          }
-        );
+    } else if (appState === "initial") {
+        const fileMap = {
+          '1': 'curriculumDominios1.json',
+          '2': 'curriculumDominios2.json'
+        };
+        if (fileMap[key]) {
+          loadCurriculumFile(fileMap[key]);
+        }
       }
   }
   
